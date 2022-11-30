@@ -16,18 +16,29 @@
 
 #include "Radio.h"
 
+#define RADIOE_IF(handle, res) ALOGE_IF(!static_cast<bool>(res), "%s: Failed to setup death recipient.", handle->name.c_str())
+
 namespace android {
 namespace hardware {
 namespace radio {
 namespace V1_3 {
 namespace implementation {
 
-Radio::Radio(const std::string& interfaceName) : interfaceName(interfaceName) {}
+Radio::Radio(const std::string& interfaceName) : interfaceName(interfaceName) {
+    recv = new SehRadioDeathRecipient<ISehRadio>();
+    mResponseDeath = new SehRadioDeathRecipient<IRadioResponse>();
+    mIndicationDeath = new SehRadioDeathRecipient<IRadioIndication>();
+}
 
 sp<::vendor::samsung::hardware::radio::V1_2::IRadio> Radio::getSecIRadio() {
     std::lock_guard<std::mutex> lock(secIRadioMutex);
     if (!secIRadio) {
-        secIRadio = ::vendor::samsung::hardware::radio::V1_2::IRadio::getService(interfaceName);
+	auto handle = new RadioHandle<ISehRadio>();
+	secIRadio = ISehRadio::getService(interfaceName);
+	handle->instanceRef = &secIRadio;
+	handle->name = std::string("IRadio main binder");
+	Return<bool> res = secIRadio->linkToDeath(recv, reinterpret_cast<uint64_t>(handle));
+	RADIOE_IF(handle, res);
     }
     return secIRadio;
 }
@@ -36,15 +47,31 @@ sp<::vendor::samsung::hardware::radio::V1_2::IRadio> Radio::getSecIRadio() {
 Return<void> Radio::setResponseFunctions(
     const sp<::android::hardware::radio::V1_0::IRadioResponse>& radioResponse,
     const sp<::android::hardware::radio::V1_0::IRadioIndication>& radioIndication) {
-    sp<::vendor::samsung::hardware::radio::V1_2::IRadioResponse> secRadioResponse =
+
+    sp<IRadioResponse> secRadioResponse =
         new SecRadioResponse(
             interfaceName == RIL1_SERVICE_NAME ? 1 : 2,
             ::android::hardware::radio::V1_2::IRadioResponse::castFrom(radioResponse)
                 .withDefault(nullptr));
-    sp<::vendor::samsung::hardware::radio::V1_2::IRadioIndication> secRadioIndication =
+    if (secRadioResponse) {
+	auto mResponseHandle = new RadioHandle<IRadioResponse>();
+        mResponseHandle->instanceRef = &secRadioResponse;
+        mResponseHandle->name = std::string("IRadioResponse binder");
+        Return<bool> res = secRadioResponse->linkToDeath(mResponseDeath, reinterpret_cast<uint64_t>(mResponseHandle));
+        RADIOE_IF(mResponseHandle, res);
+    }
+
+    sp<IRadioIndication> secRadioIndication =
         new SecRadioIndication(
             ::android::hardware::radio::V1_2::IRadioIndication::castFrom(radioIndication)
                 .withDefault(nullptr));
+    if (secRadioIndication) {
+       auto mIndicationHandle = new RadioHandle<IRadioIndication>();
+       mIndicationHandle->instanceRef = &secRadioIndication;
+       mIndicationHandle->name = std::string("IRadioIndication binder");
+       Return<bool> res = secRadioIndication->linkToDeath(mIndicationDeath, reinterpret_cast<uint64_t>(mIndicationHandle));
+       RADIOE_IF(mIndicationHandle, res);
+    }
     getSecIRadio()->setResponseFunctions(secRadioResponse, secRadioIndication);
     return Void();
 }

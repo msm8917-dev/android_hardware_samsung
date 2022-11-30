@@ -17,12 +17,16 @@
 #pragma once
 
 #include <android/hardware/radio/1.3/IRadio.h>
+#include <log/log.h>
 #include <hidl/MQDescriptor.h>
 #include <hidl/Status.h>
 #include <vendor/samsung/hardware/radio/1.2/IRadio.h>
 
 #include "SecRadioIndication.h"
 #include "SecRadioResponse.h"
+#include "RadioDeathHandler.h"
+
+#include <string>
 
 namespace android {
 namespace hardware {
@@ -40,14 +44,21 @@ using ::android::hardware::hidl_string;
 using ::android::hardware::hidl_vec;
 using ::android::hardware::Return;
 using ::android::hardware::Void;
+using ::vendor::samsung::hardware::radio::V1_2::IRadioIndication;
+using ::vendor::samsung::hardware::radio::V1_2::IRadioResponse;
 using ::vendor::samsung::hardware::radio::V1_2::implementation::SecRadioIndication;
 using ::vendor::samsung::hardware::radio::V1_2::implementation::SecRadioResponse;
+using ISehRadio = ::vendor::samsung::hardware::radio::V1_2::IRadio;
 
-struct Radio : public IRadio {
+class Radio : public IRadio {
+    sp<SehRadioDeathRecipient<ISehRadio>> recv;
+    sp<SehRadioDeathRecipient<IRadioResponse>> mResponseDeath;
+    sp<SehRadioDeathRecipient<IRadioIndication>> mIndicationDeath;
     std::string interfaceName;
     std::mutex secIRadioMutex;
-    sp<::vendor::samsung::hardware::radio::V1_2::IRadio> secIRadio;
+    sp<ISehRadio> secIRadio;
 
+ public:
     Radio(const std::string& interfaceName);
 
     sp<::vendor::samsung::hardware::radio::V1_2::IRadio> getSecIRadio();
