@@ -31,311 +31,311 @@ SecRadioIndication::SecRadioIndication(
 Return<void> SecRadioIndication::radioStateChanged(
     ::android::hardware::radio::V1_0::RadioIndicationType type,
     ::android::hardware::radio::V1_0::RadioState radioState) {
-    radioIndication->radioStateChanged(type, radioState);
+    if (radioIndication) radioIndication->radioStateChanged(type, radioState);
     return Void();
 }
 
 Return<void> SecRadioIndication::callStateChanged(
     ::android::hardware::radio::V1_0::RadioIndicationType type) {
-    radioIndication->callStateChanged(type);
+    if (radioIndication) radioIndication->callStateChanged(type);
     return Void();
 }
 
 Return<void> SecRadioIndication::networkStateChanged(
     ::android::hardware::radio::V1_0::RadioIndicationType type) {
-    radioIndication->networkStateChanged(type);
+    if (radioIndication) radioIndication->networkStateChanged(type);
     return Void();
 }
 
 Return<void> SecRadioIndication::newSms(::android::hardware::radio::V1_0::RadioIndicationType type,
                                         const hidl_vec<uint8_t>& pdu) {
-    radioIndication->newSms(type, pdu);
+    if (radioIndication) radioIndication->newSms(type, pdu);
     return Void();
 }
 
 Return<void> SecRadioIndication::newSmsStatusReport(
     ::android::hardware::radio::V1_0::RadioIndicationType type, const hidl_vec<uint8_t>& pdu) {
-    radioIndication->newSmsStatusReport(type, pdu);
+    if (radioIndication) radioIndication->newSmsStatusReport(type, pdu);
     return Void();
 }
 
 Return<void> SecRadioIndication::newSmsOnSim(
     ::android::hardware::radio::V1_0::RadioIndicationType type, int32_t recordNumber) {
-    radioIndication->newSmsOnSim(type, recordNumber);
+    if (radioIndication) radioIndication->newSmsOnSim(type, recordNumber);
     return Void();
 }
 
 Return<void> SecRadioIndication::onUssd(::android::hardware::radio::V1_0::RadioIndicationType type,
                                         ::android::hardware::radio::V1_0::UssdModeType modeType,
                                         const hidl_string& msg) {
-    radioIndication->onUssd(type, modeType, msg);
+    if (radioIndication) radioIndication->onUssd(type, modeType, msg);
     return Void();
 }
 
 Return<void> SecRadioIndication::nitzTimeReceived(
     ::android::hardware::radio::V1_0::RadioIndicationType type, const hidl_string& nitzTime,
     uint64_t receivedTime) {
-    radioIndication->nitzTimeReceived(type, nitzTime, receivedTime);
+    if (radioIndication) radioIndication->nitzTimeReceived(type, nitzTime, receivedTime);
     return Void();
 }
 
 Return<void> SecRadioIndication::currentSignalStrength(
     ::android::hardware::radio::V1_0::RadioIndicationType type,
     const ::android::hardware::radio::V1_0::SignalStrength& signalStrength) {
-    radioIndication->currentSignalStrength(type, signalStrength);
+    if (radioIndication) radioIndication->currentSignalStrength(type, signalStrength);
     return Void();
 }
 
 Return<void> SecRadioIndication::dataCallListChanged(
     ::android::hardware::radio::V1_0::RadioIndicationType type,
     const hidl_vec<::android::hardware::radio::V1_0::SetupDataCallResult>& dcList) {
-    radioIndication->dataCallListChanged(type, dcList);
+    if (radioIndication) radioIndication->dataCallListChanged(type, dcList);
     return Void();
 }
 
 Return<void> SecRadioIndication::suppSvcNotify(
     ::android::hardware::radio::V1_0::RadioIndicationType type,
     const ::android::hardware::radio::V1_0::SuppSvcNotification& suppSvc) {
-    radioIndication->suppSvcNotify(type, suppSvc);
+    if (radioIndication) radioIndication->suppSvcNotify(type, suppSvc);
     return Void();
 }
 
 Return<void> SecRadioIndication::stkSessionEnd(
     ::android::hardware::radio::V1_0::RadioIndicationType type) {
-    radioIndication->stkSessionEnd(type);
+    if (radioIndication) radioIndication->stkSessionEnd(type);
     return Void();
 }
 
 Return<void> SecRadioIndication::stkProactiveCommand(
     ::android::hardware::radio::V1_0::RadioIndicationType type, const hidl_string& cmd) {
-    radioIndication->stkProactiveCommand(type, cmd);
+    if (radioIndication) radioIndication->stkProactiveCommand(type, cmd);
     return Void();
 }
 
 Return<void> SecRadioIndication::stkEventNotify(
     ::android::hardware::radio::V1_0::RadioIndicationType type, const hidl_string& cmd) {
-    radioIndication->stkEventNotify(type, cmd);
+    if (radioIndication) radioIndication->stkEventNotify(type, cmd);
     return Void();
 }
 
 Return<void> SecRadioIndication::stkCallSetup(
     ::android::hardware::radio::V1_0::RadioIndicationType type, int64_t timeout) {
-    radioIndication->stkCallSetup(type, timeout);
+    if (radioIndication) radioIndication->stkCallSetup(type, timeout);
     return Void();
 }
 
 Return<void> SecRadioIndication::simSmsStorageFull(
     ::android::hardware::radio::V1_0::RadioIndicationType type) {
-    radioIndication->simSmsStorageFull(type);
+    if (radioIndication) radioIndication->simSmsStorageFull(type);
     return Void();
 }
 
 Return<void> SecRadioIndication::simRefresh(
     ::android::hardware::radio::V1_0::RadioIndicationType type,
     const ::android::hardware::radio::V1_0::SimRefreshResult& refreshResult) {
-    radioIndication->simRefresh(type, refreshResult);
+    if (radioIndication) radioIndication->simRefresh(type, refreshResult);
     return Void();
 }
 
 Return<void> SecRadioIndication::callRing(
     ::android::hardware::radio::V1_0::RadioIndicationType type, bool isGsm,
     const ::android::hardware::radio::V1_0::CdmaSignalInfoRecord& record) {
-    radioIndication->callRing(type, isGsm, record);
+    if (radioIndication) radioIndication->callRing(type, isGsm, record);
     return Void();
 }
 
 Return<void> SecRadioIndication::simStatusChanged(
     ::android::hardware::radio::V1_0::RadioIndicationType type) {
-    radioIndication->simStatusChanged(type);
+    if (radioIndication) radioIndication->simStatusChanged(type);
     return Void();
 }
 
 Return<void> SecRadioIndication::cdmaNewSms(
     ::android::hardware::radio::V1_0::RadioIndicationType type,
     const ::android::hardware::radio::V1_0::CdmaSmsMessage& msg) {
-    radioIndication->cdmaNewSms(type, msg);
+    if (radioIndication) radioIndication->cdmaNewSms(type, msg);
     return Void();
 }
 
 Return<void> SecRadioIndication::newBroadcastSms(
     ::android::hardware::radio::V1_0::RadioIndicationType type, const hidl_vec<uint8_t>& data) {
-    radioIndication->newBroadcastSms(type, data);
+    if (radioIndication) radioIndication->newBroadcastSms(type, data);
     return Void();
 }
 
 Return<void> SecRadioIndication::cdmaRuimSmsStorageFull(
     ::android::hardware::radio::V1_0::RadioIndicationType type) {
-    radioIndication->cdmaRuimSmsStorageFull(type);
+    if (radioIndication) radioIndication->cdmaRuimSmsStorageFull(type);
     return Void();
 }
 
 Return<void> SecRadioIndication::restrictedStateChanged(
     ::android::hardware::radio::V1_0::RadioIndicationType type,
     ::android::hardware::radio::V1_0::PhoneRestrictedState state) {
-    radioIndication->restrictedStateChanged(type, state);
+    if (radioIndication) radioIndication->restrictedStateChanged(type, state);
     return Void();
 }
 
 Return<void> SecRadioIndication::enterEmergencyCallbackMode(
     ::android::hardware::radio::V1_0::RadioIndicationType type) {
-    radioIndication->enterEmergencyCallbackMode(type);
+    if (radioIndication) radioIndication->enterEmergencyCallbackMode(type);
     return Void();
 }
 
 Return<void> SecRadioIndication::cdmaCallWaiting(
     ::android::hardware::radio::V1_0::RadioIndicationType type,
     const ::android::hardware::radio::V1_0::CdmaCallWaiting& callWaitingRecord) {
-    radioIndication->cdmaCallWaiting(type, callWaitingRecord);
+    if (radioIndication) radioIndication->cdmaCallWaiting(type, callWaitingRecord);
     return Void();
 }
 
 Return<void> SecRadioIndication::cdmaOtaProvisionStatus(
     ::android::hardware::radio::V1_0::RadioIndicationType type,
     ::android::hardware::radio::V1_0::CdmaOtaProvisionStatus status) {
-    radioIndication->cdmaOtaProvisionStatus(type, status);
+    if (radioIndication) radioIndication->cdmaOtaProvisionStatus(type, status);
     return Void();
 }
 
 Return<void> SecRadioIndication::cdmaInfoRec(
     ::android::hardware::radio::V1_0::RadioIndicationType type,
     const ::android::hardware::radio::V1_0::CdmaInformationRecords& records) {
-    radioIndication->cdmaInfoRec(type, records);
+    if (radioIndication) radioIndication->cdmaInfoRec(type, records);
     return Void();
 }
 
 Return<void> SecRadioIndication::indicateRingbackTone(
     ::android::hardware::radio::V1_0::RadioIndicationType type, bool start) {
-    radioIndication->indicateRingbackTone(type, start);
+    if (radioIndication) radioIndication->indicateRingbackTone(type, start);
     return Void();
 }
 
 Return<void> SecRadioIndication::resendIncallMute(
     ::android::hardware::radio::V1_0::RadioIndicationType type) {
-    radioIndication->resendIncallMute(type);
+    if (radioIndication) radioIndication->resendIncallMute(type);
     return Void();
 }
 
 Return<void> SecRadioIndication::cdmaSubscriptionSourceChanged(
     ::android::hardware::radio::V1_0::RadioIndicationType type,
     ::android::hardware::radio::V1_0::CdmaSubscriptionSource cdmaSource) {
-    radioIndication->cdmaSubscriptionSourceChanged(type, cdmaSource);
+    if (radioIndication) radioIndication->cdmaSubscriptionSourceChanged(type, cdmaSource);
     return Void();
 }
 
 Return<void> SecRadioIndication::cdmaPrlChanged(
     ::android::hardware::radio::V1_0::RadioIndicationType type, int32_t version) {
-    radioIndication->cdmaPrlChanged(type, version);
+    if (radioIndication) radioIndication->cdmaPrlChanged(type, version);
     return Void();
 }
 
 Return<void> SecRadioIndication::exitEmergencyCallbackMode(
     ::android::hardware::radio::V1_0::RadioIndicationType type) {
-    radioIndication->exitEmergencyCallbackMode(type);
+    if (radioIndication) radioIndication->exitEmergencyCallbackMode(type);
     return Void();
 }
 
 Return<void> SecRadioIndication::rilConnected(
     ::android::hardware::radio::V1_0::RadioIndicationType type) {
-    radioIndication->rilConnected(type);
+    if (radioIndication) radioIndication->rilConnected(type);
     return Void();
 }
 
 Return<void> SecRadioIndication::voiceRadioTechChanged(
     ::android::hardware::radio::V1_0::RadioIndicationType type,
     ::android::hardware::radio::V1_0::RadioTechnology rat) {
-    radioIndication->voiceRadioTechChanged(type, rat);
+    if (radioIndication) radioIndication->voiceRadioTechChanged(type, rat);
     return Void();
 }
 
 Return<void> SecRadioIndication::cellInfoList(
     ::android::hardware::radio::V1_0::RadioIndicationType type,
     const hidl_vec<::android::hardware::radio::V1_0::CellInfo>& records) {
-    radioIndication->cellInfoList(type, records);
+    if (radioIndication) radioIndication->cellInfoList(type, records);
     return Void();
 }
 
 Return<void> SecRadioIndication::imsNetworkStateChanged(
     ::android::hardware::radio::V1_0::RadioIndicationType type) {
-    radioIndication->imsNetworkStateChanged(type);
+    if (radioIndication) radioIndication->imsNetworkStateChanged(type);
     return Void();
 }
 
 Return<void> SecRadioIndication::subscriptionStatusChanged(
     ::android::hardware::radio::V1_0::RadioIndicationType type, bool activate) {
-    radioIndication->subscriptionStatusChanged(type, activate);
+    if (radioIndication) radioIndication->subscriptionStatusChanged(type, activate);
     return Void();
 }
 
 Return<void> SecRadioIndication::srvccStateNotify(
     ::android::hardware::radio::V1_0::RadioIndicationType type,
     ::android::hardware::radio::V1_0::SrvccState state) {
-    radioIndication->srvccStateNotify(type, state);
+    if (radioIndication) radioIndication->srvccStateNotify(type, state);
     return Void();
 }
 
 Return<void> SecRadioIndication::hardwareConfigChanged(
     ::android::hardware::radio::V1_0::RadioIndicationType type,
     const hidl_vec<::android::hardware::radio::V1_0::HardwareConfig>& configs) {
-    radioIndication->hardwareConfigChanged(type, configs);
+    if (radioIndication) radioIndication->hardwareConfigChanged(type, configs);
     return Void();
 }
 
 Return<void> SecRadioIndication::radioCapabilityIndication(
     ::android::hardware::radio::V1_0::RadioIndicationType type,
     const ::android::hardware::radio::V1_0::RadioCapability& rc) {
-    radioIndication->radioCapabilityIndication(type, rc);
+    if (radioIndication) radioIndication->radioCapabilityIndication(type, rc);
     return Void();
 }
 
 Return<void> SecRadioIndication::onSupplementaryServiceIndication(
     ::android::hardware::radio::V1_0::RadioIndicationType type,
     const ::android::hardware::radio::V1_0::StkCcUnsolSsResult& ss) {
-    radioIndication->onSupplementaryServiceIndication(type, ss);
+    if (radioIndication) radioIndication->onSupplementaryServiceIndication(type, ss);
     return Void();
 }
 
 Return<void> SecRadioIndication::stkCallControlAlphaNotify(
     ::android::hardware::radio::V1_0::RadioIndicationType type, const hidl_string& alpha) {
-    radioIndication->stkCallControlAlphaNotify(type, alpha);
+    if (radioIndication) radioIndication->stkCallControlAlphaNotify(type, alpha);
     return Void();
 }
 
 Return<void> SecRadioIndication::lceData(::android::hardware::radio::V1_0::RadioIndicationType type,
                                          const ::android::hardware::radio::V1_0::LceDataInfo& lce) {
-    radioIndication->lceData(type, lce);
+    if (radioIndication) radioIndication->lceData(type, lce);
     return Void();
 }
 
 Return<void> SecRadioIndication::pcoData(::android::hardware::radio::V1_0::RadioIndicationType type,
                                          const ::android::hardware::radio::V1_0::PcoDataInfo& pco) {
-    radioIndication->pcoData(type, pco);
+    if (radioIndication) radioIndication->pcoData(type, pco);
     return Void();
 }
 
 Return<void> SecRadioIndication::modemReset(
     ::android::hardware::radio::V1_0::RadioIndicationType type, const hidl_string& reason) {
-    radioIndication->modemReset(type, reason);
+    if (radioIndication) radioIndication->modemReset(type, reason);
     return Void();
 }
 
 // Methods from ::android::hardware::radio::V1_1::IRadioIndication follow.
 Return<void> SecRadioIndication::carrierInfoForImsiEncryption(
     ::android::hardware::radio::V1_0::RadioIndicationType info) {
-    radioIndication->carrierInfoForImsiEncryption(info);
+    if (radioIndication) radioIndication->carrierInfoForImsiEncryption(info);
     return Void();
 }
 
 Return<void> SecRadioIndication::networkScanResult(
     ::android::hardware::radio::V1_0::RadioIndicationType type,
     const ::android::hardware::radio::V1_1::NetworkScanResult& result) {
-    radioIndication->networkScanResult(type, result);
+    if (radioIndication) radioIndication->networkScanResult(type, result);
     return Void();
 }
 
 Return<void> SecRadioIndication::keepaliveStatus(
     ::android::hardware::radio::V1_0::RadioIndicationType type,
     const ::android::hardware::radio::V1_1::KeepaliveStatus& status) {
-    radioIndication->keepaliveStatus(type, status);
+    if (radioIndication) radioIndication->keepaliveStatus(type, status);
     return Void();
 }
 
@@ -343,35 +343,35 @@ Return<void> SecRadioIndication::keepaliveStatus(
 Return<void> SecRadioIndication::networkScanResult_1_2(
     ::android::hardware::radio::V1_0::RadioIndicationType type,
     const ::android::hardware::radio::V1_2::NetworkScanResult& result) {
-    radioIndication->networkScanResult_1_2(type, result);
+    if (radioIndication) radioIndication->networkScanResult_1_2(type, result);
     return Void();
 }
 
 Return<void> SecRadioIndication::cellInfoList_1_2(
     ::android::hardware::radio::V1_0::RadioIndicationType type,
     const hidl_vec<::android::hardware::radio::V1_2::CellInfo>& records) {
-    radioIndication->cellInfoList_1_2(type, records);
+    if (radioIndication) radioIndication->cellInfoList_1_2(type, records);
     return Void();
 }
 
 Return<void> SecRadioIndication::currentLinkCapacityEstimate(
     ::android::hardware::radio::V1_0::RadioIndicationType type,
     const ::android::hardware::radio::V1_2::LinkCapacityEstimate& lce) {
-    radioIndication->currentLinkCapacityEstimate(type, lce);
+    if (radioIndication) radioIndication->currentLinkCapacityEstimate(type, lce);
     return Void();
 }
 
 Return<void> SecRadioIndication::currentPhysicalChannelConfigs(
     ::android::hardware::radio::V1_0::RadioIndicationType type,
     const hidl_vec<::android::hardware::radio::V1_2::PhysicalChannelConfig>& configs) {
-    radioIndication->currentPhysicalChannelConfigs(type, configs);
+    if (radioIndication) radioIndication->currentPhysicalChannelConfigs(type, configs);
     return Void();
 }
 
 Return<void> SecRadioIndication::currentSignalStrength_1_2(
     ::android::hardware::radio::V1_0::RadioIndicationType type,
     const ::android::hardware::radio::V1_2::SignalStrength& signalStrength) {
-    radioIndication->currentSignalStrength_1_2(type, signalStrength);
+    if (radioIndication) radioIndication->currentSignalStrength_1_2(type, signalStrength);
     return Void();
 }
 
@@ -384,7 +384,7 @@ Return<void> SecRadioIndication::secCurrentSignalStrength(
         // Set lte signal to invalid
         newSignalStrength.lte.timingAdvance = std::numeric_limits<int>::max();
     }
-    radioIndication->currentSignalStrength_1_2(type, newSignalStrength);
+    if (radioIndication) radioIndication->currentSignalStrength_1_2(type, newSignalStrength);
     return Void();
 }
 

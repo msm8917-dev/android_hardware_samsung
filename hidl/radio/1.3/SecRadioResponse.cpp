@@ -31,529 +31,529 @@ SecRadioResponse::SecRadioResponse(
 Return<void> SecRadioResponse::getIccCardStatusResponse(
     const ::android::hardware::radio::V1_0::RadioResponseInfo& info,
     const ::android::hardware::radio::V1_0::CardStatus& cardStatus) {
-    radioResponse->getIccCardStatusResponse(info, cardStatus);
+    if (radioResponse) radioResponse->getIccCardStatusResponse(info, cardStatus);
     return Void();
 }
 
 Return<void> SecRadioResponse::supplyIccPinForAppResponse(
     const ::android::hardware::radio::V1_0::RadioResponseInfo& info, int32_t remainingRetries) {
-    radioResponse->supplyIccPinForAppResponse(info, remainingRetries);
+    if (radioResponse) radioResponse->supplyIccPinForAppResponse(info, remainingRetries);
     return Void();
 }
 
 Return<void> SecRadioResponse::supplyIccPukForAppResponse(
     const ::android::hardware::radio::V1_0::RadioResponseInfo& info, int32_t remainingRetries) {
-    radioResponse->supplyIccPukForAppResponse(info, remainingRetries);
+    if (radioResponse) radioResponse->supplyIccPukForAppResponse(info, remainingRetries);
     return Void();
 }
 
 Return<void> SecRadioResponse::supplyIccPin2ForAppResponse(
     const ::android::hardware::radio::V1_0::RadioResponseInfo& info, int32_t remainingRetries) {
-    radioResponse->supplyIccPin2ForAppResponse(info, remainingRetries);
+    if (radioResponse) radioResponse->supplyIccPin2ForAppResponse(info, remainingRetries);
     return Void();
 }
 
 Return<void> SecRadioResponse::supplyIccPuk2ForAppResponse(
     const ::android::hardware::radio::V1_0::RadioResponseInfo& info, int32_t remainingRetries) {
-    radioResponse->supplyIccPuk2ForAppResponse(info, remainingRetries);
+    if (radioResponse) radioResponse->supplyIccPuk2ForAppResponse(info, remainingRetries);
     return Void();
 }
 
 Return<void> SecRadioResponse::changeIccPinForAppResponse(
     const ::android::hardware::radio::V1_0::RadioResponseInfo& info, int32_t remainingRetries) {
-    radioResponse->changeIccPinForAppResponse(info, remainingRetries);
+    if (radioResponse) radioResponse->changeIccPinForAppResponse(info, remainingRetries);
     return Void();
 }
 
 Return<void> SecRadioResponse::changeIccPin2ForAppResponse(
     const ::android::hardware::radio::V1_0::RadioResponseInfo& info, int32_t remainingRetries) {
-    radioResponse->changeIccPin2ForAppResponse(info, remainingRetries);
+    if (radioResponse) radioResponse->changeIccPin2ForAppResponse(info, remainingRetries);
     return Void();
 }
 
 Return<void> SecRadioResponse::supplyNetworkDepersonalizationResponse(
     const ::android::hardware::radio::V1_0::RadioResponseInfo& info, int32_t remainingRetries) {
-    radioResponse->supplyNetworkDepersonalizationResponse(info, remainingRetries);
+    if (radioResponse) radioResponse->supplyNetworkDepersonalizationResponse(info, remainingRetries);
     return Void();
 }
 
 Return<void> SecRadioResponse::getCurrentCallsResponse(
     const ::android::hardware::radio::V1_0::RadioResponseInfo& info,
     const hidl_vec<::android::hardware::radio::V1_0::Call>& calls) {
-    radioResponse->getCurrentCallsResponse(info, calls);
+    if (radioResponse) radioResponse->getCurrentCallsResponse(info, calls);
     return Void();
 }
 
 Return<void> SecRadioResponse::dialResponse(
     const ::android::hardware::radio::V1_0::RadioResponseInfo& info) {
-    radioResponse->dialResponse(info);
+    if (radioResponse) radioResponse->dialResponse(info);
     return Void();
 }
 
 Return<void> SecRadioResponse::getIMSIForAppResponse(
     const ::android::hardware::radio::V1_0::RadioResponseInfo& info, const hidl_string& imsi) {
-    radioResponse->getIMSIForAppResponse(info, imsi);
+    if (radioResponse) radioResponse->getIMSIForAppResponse(info, imsi);
     return Void();
 }
 
 Return<void> SecRadioResponse::hangupConnectionResponse(
     const ::android::hardware::radio::V1_0::RadioResponseInfo& info) {
-    radioResponse->hangupConnectionResponse(info);
+    if (radioResponse) radioResponse->hangupConnectionResponse(info);
     return Void();
 }
 
 Return<void> SecRadioResponse::hangupWaitingOrBackgroundResponse(
     const ::android::hardware::radio::V1_0::RadioResponseInfo& info) {
-    radioResponse->hangupWaitingOrBackgroundResponse(info);
+    if (radioResponse) radioResponse->hangupWaitingOrBackgroundResponse(info);
     return Void();
 }
 
 Return<void> SecRadioResponse::hangupForegroundResumeBackgroundResponse(
     const ::android::hardware::radio::V1_0::RadioResponseInfo& info) {
-    radioResponse->hangupForegroundResumeBackgroundResponse(info);
+    if (radioResponse) radioResponse->hangupForegroundResumeBackgroundResponse(info);
     return Void();
 }
 
 Return<void> SecRadioResponse::switchWaitingOrHoldingAndActiveResponse(
     const ::android::hardware::radio::V1_0::RadioResponseInfo& info) {
-    radioResponse->switchWaitingOrHoldingAndActiveResponse(info);
+    if (radioResponse) radioResponse->switchWaitingOrHoldingAndActiveResponse(info);
     return Void();
 }
 
 Return<void> SecRadioResponse::conferenceResponse(
     const ::android::hardware::radio::V1_0::RadioResponseInfo& info) {
-    radioResponse->conferenceResponse(info);
+    if (radioResponse) radioResponse->conferenceResponse(info);
     return Void();
 }
 
 Return<void> SecRadioResponse::rejectCallResponse(
     const ::android::hardware::radio::V1_0::RadioResponseInfo& info) {
-    radioResponse->rejectCallResponse(info);
+    if (radioResponse) radioResponse->rejectCallResponse(info);
     return Void();
 }
 
 Return<void> SecRadioResponse::getLastCallFailCauseResponse(
     const ::android::hardware::radio::V1_0::RadioResponseInfo& info,
     const ::android::hardware::radio::V1_0::LastCallFailCauseInfo& failCauseinfo) {
-    radioResponse->getLastCallFailCauseResponse(info, failCauseinfo);
+    if (radioResponse) radioResponse->getLastCallFailCauseResponse(info, failCauseinfo);
     return Void();
 }
 
 Return<void> SecRadioResponse::getSignalStrengthResponse(
     const ::android::hardware::radio::V1_0::RadioResponseInfo& info,
     const ::android::hardware::radio::V1_0::SignalStrength& sigStrength) {
-    radioResponse->getSignalStrengthResponse(info, sigStrength);
+    if (radioResponse) radioResponse->getSignalStrengthResponse(info, sigStrength);
     return Void();
 }
 
 Return<void> SecRadioResponse::getVoiceRegistrationStateResponse(
     const ::android::hardware::radio::V1_0::RadioResponseInfo& info,
     const ::android::hardware::radio::V1_0::VoiceRegStateResult& voiceRegResponse) {
-    radioResponse->getVoiceRegistrationStateResponse(info, voiceRegResponse);
+    if (radioResponse) radioResponse->getVoiceRegistrationStateResponse(info, voiceRegResponse);
     return Void();
 }
 
 Return<void> SecRadioResponse::getDataRegistrationStateResponse(
     const ::android::hardware::radio::V1_0::RadioResponseInfo& info,
     const ::android::hardware::radio::V1_0::DataRegStateResult& dataRegResponse) {
-    radioResponse->getDataRegistrationStateResponse(info, dataRegResponse);
+    if (radioResponse) radioResponse->getDataRegistrationStateResponse(info, dataRegResponse);
     return Void();
 }
 
 Return<void> SecRadioResponse::getOperatorResponse(
     const ::android::hardware::radio::V1_0::RadioResponseInfo& info, const hidl_string& longName,
     const hidl_string& shortName, const hidl_string& numeric) {
-    radioResponse->getOperatorResponse(info, longName, shortName, numeric);
+    if (radioResponse) radioResponse->getOperatorResponse(info, longName, shortName, numeric);
     return Void();
 }
 
 Return<void> SecRadioResponse::setRadioPowerResponse(
     const ::android::hardware::radio::V1_0::RadioResponseInfo& info) {
-    radioResponse->setRadioPowerResponse(info);
+    if (radioResponse) radioResponse->setRadioPowerResponse(info);
     return Void();
 }
 
 Return<void> SecRadioResponse::sendDtmfResponse(
     const ::android::hardware::radio::V1_0::RadioResponseInfo& info) {
-    radioResponse->sendDtmfResponse(info);
+    if (radioResponse) radioResponse->sendDtmfResponse(info);
     return Void();
 }
 
 Return<void> SecRadioResponse::sendSmsResponse(
     const ::android::hardware::radio::V1_0::RadioResponseInfo& info,
     const ::android::hardware::radio::V1_0::SendSmsResult& sms) {
-    radioResponse->sendSmsResponse(info, sms);
+    if (radioResponse) radioResponse->sendSmsResponse(info, sms);
     return Void();
 }
 
 Return<void> SecRadioResponse::sendSMSExpectMoreResponse(
     const ::android::hardware::radio::V1_0::RadioResponseInfo& info,
     const ::android::hardware::radio::V1_0::SendSmsResult& sms) {
-    radioResponse->sendSMSExpectMoreResponse(info, sms);
+    if (radioResponse) radioResponse->sendSMSExpectMoreResponse(info, sms);
     return Void();
 }
 
 Return<void> SecRadioResponse::setupDataCallResponse(
     const ::android::hardware::radio::V1_0::RadioResponseInfo& info,
     const ::android::hardware::radio::V1_0::SetupDataCallResult& dcResponse) {
-    radioResponse->setupDataCallResponse(info, dcResponse);
+    if (radioResponse) radioResponse->setupDataCallResponse(info, dcResponse);
     return Void();
 }
 
 Return<void> SecRadioResponse::iccIOForAppResponse(
     const ::android::hardware::radio::V1_0::RadioResponseInfo& info,
     const ::android::hardware::radio::V1_0::IccIoResult& iccIo) {
-    radioResponse->iccIOForAppResponse(info, iccIo);
+    if (radioResponse) radioResponse->iccIOForAppResponse(info, iccIo);
     return Void();
 }
 
 Return<void> SecRadioResponse::sendUssdResponse(
     const ::android::hardware::radio::V1_0::RadioResponseInfo& info) {
-    radioResponse->sendUssdResponse(info);
+    if (radioResponse) radioResponse->sendUssdResponse(info);
     return Void();
 }
 
 Return<void> SecRadioResponse::cancelPendingUssdResponse(
     const ::android::hardware::radio::V1_0::RadioResponseInfo& info) {
-    radioResponse->cancelPendingUssdResponse(info);
+    if (radioResponse) radioResponse->cancelPendingUssdResponse(info);
     return Void();
 }
 
 Return<void> SecRadioResponse::getClirResponse(
     const ::android::hardware::radio::V1_0::RadioResponseInfo& info, int32_t n, int32_t m) {
-    radioResponse->getClirResponse(info, n, m);
+    if (radioResponse) radioResponse->getClirResponse(info, n, m);
     return Void();
 }
 
 Return<void> SecRadioResponse::setClirResponse(
     const ::android::hardware::radio::V1_0::RadioResponseInfo& info) {
-    radioResponse->setClirResponse(info);
+    if (radioResponse) radioResponse->setClirResponse(info);
     return Void();
 }
 
 Return<void> SecRadioResponse::getCallForwardStatusResponse(
     const ::android::hardware::radio::V1_0::RadioResponseInfo& info,
     const hidl_vec<::android::hardware::radio::V1_0::CallForwardInfo>& callForwardInfos) {
-    radioResponse->getCallForwardStatusResponse(info, callForwardInfos);
+    if (radioResponse) radioResponse->getCallForwardStatusResponse(info, callForwardInfos);
     return Void();
 }
 
 Return<void> SecRadioResponse::setCallForwardResponse(
     const ::android::hardware::radio::V1_0::RadioResponseInfo& info) {
-    radioResponse->setCallForwardResponse(info);
+    if (radioResponse) radioResponse->setCallForwardResponse(info);
     return Void();
 }
 
 Return<void> SecRadioResponse::getCallWaitingResponse(
     const ::android::hardware::radio::V1_0::RadioResponseInfo& info, bool enable,
     int32_t serviceClass) {
-    radioResponse->getCallWaitingResponse(info, enable, serviceClass);
+    if (radioResponse) radioResponse->getCallWaitingResponse(info, enable, serviceClass);
     return Void();
 }
 
 Return<void> SecRadioResponse::setCallWaitingResponse(
     const ::android::hardware::radio::V1_0::RadioResponseInfo& info) {
-    radioResponse->setCallWaitingResponse(info);
+    if (radioResponse) radioResponse->setCallWaitingResponse(info);
     return Void();
 }
 
 Return<void> SecRadioResponse::acknowledgeLastIncomingGsmSmsResponse(
     const ::android::hardware::radio::V1_0::RadioResponseInfo& info) {
-    radioResponse->acknowledgeLastIncomingGsmSmsResponse(info);
+    if (radioResponse) radioResponse->acknowledgeLastIncomingGsmSmsResponse(info);
     return Void();
 }
 
 Return<void> SecRadioResponse::acceptCallResponse(
     const ::android::hardware::radio::V1_0::RadioResponseInfo& info) {
-    radioResponse->acceptCallResponse(info);
+    if (radioResponse) radioResponse->acceptCallResponse(info);
     return Void();
 }
 
 Return<void> SecRadioResponse::deactivateDataCallResponse(
     const ::android::hardware::radio::V1_0::RadioResponseInfo& info) {
-    radioResponse->deactivateDataCallResponse(info);
+    if (radioResponse) radioResponse->deactivateDataCallResponse(info);
     return Void();
 }
 
 Return<void> SecRadioResponse::getFacilityLockForAppResponse(
     const ::android::hardware::radio::V1_0::RadioResponseInfo& info, int32_t response) {
-    radioResponse->getFacilityLockForAppResponse(info, response);
+    if (radioResponse) radioResponse->getFacilityLockForAppResponse(info, response);
     return Void();
 }
 
 Return<void> SecRadioResponse::setFacilityLockForAppResponse(
     const ::android::hardware::radio::V1_0::RadioResponseInfo& info, int32_t retry) {
-    radioResponse->setFacilityLockForAppResponse(info, retry);
+    if (radioResponse) radioResponse->setFacilityLockForAppResponse(info, retry);
     return Void();
 }
 
 Return<void> SecRadioResponse::setBarringPasswordResponse(
     const ::android::hardware::radio::V1_0::RadioResponseInfo& info) {
-    radioResponse->setBarringPasswordResponse(info);
+    if (radioResponse) radioResponse->setBarringPasswordResponse(info);
     return Void();
 }
 
 Return<void> SecRadioResponse::getNetworkSelectionModeResponse(
     const ::android::hardware::radio::V1_0::RadioResponseInfo& info, bool manual) {
-    radioResponse->getNetworkSelectionModeResponse(info, manual);
+    if (radioResponse) radioResponse->getNetworkSelectionModeResponse(info, manual);
     return Void();
 }
 
 Return<void> SecRadioResponse::setNetworkSelectionModeAutomaticResponse(
     const ::android::hardware::radio::V1_0::RadioResponseInfo& info) {
-    radioResponse->setNetworkSelectionModeAutomaticResponse(info);
+    if (radioResponse) radioResponse->setNetworkSelectionModeAutomaticResponse(info);
     return Void();
 }
 
 Return<void> SecRadioResponse::setNetworkSelectionModeManualResponse(
     const ::android::hardware::radio::V1_0::RadioResponseInfo& info) {
-    radioResponse->setNetworkSelectionModeManualResponse(info);
+    if (radioResponse) radioResponse->setNetworkSelectionModeManualResponse(info);
     return Void();
 }
 
 Return<void> SecRadioResponse::getAvailableNetworksResponse(
     const ::android::hardware::radio::V1_0::RadioResponseInfo& info,
     const hidl_vec<::android::hardware::radio::V1_0::OperatorInfo>& networkInfos) {
-    radioResponse->getAvailableNetworksResponse(info, networkInfos);
+    if (radioResponse) radioResponse->getAvailableNetworksResponse(info, networkInfos);
     return Void();
 }
 
 Return<void> SecRadioResponse::startDtmfResponse(
     const ::android::hardware::radio::V1_0::RadioResponseInfo& info) {
-    radioResponse->startDtmfResponse(info);
+    if (radioResponse) radioResponse->startDtmfResponse(info);
     return Void();
 }
 
 Return<void> SecRadioResponse::stopDtmfResponse(
     const ::android::hardware::radio::V1_0::RadioResponseInfo& info) {
-    radioResponse->stopDtmfResponse(info);
+    if (radioResponse) radioResponse->stopDtmfResponse(info);
     return Void();
 }
 
 Return<void> SecRadioResponse::getBasebandVersionResponse(
     const ::android::hardware::radio::V1_0::RadioResponseInfo& info, const hidl_string& version) {
-    radioResponse->getBasebandVersionResponse(info, version);
+    if (radioResponse) radioResponse->getBasebandVersionResponse(info, version);
     return Void();
 }
 
 Return<void> SecRadioResponse::separateConnectionResponse(
     const ::android::hardware::radio::V1_0::RadioResponseInfo& info) {
-    radioResponse->separateConnectionResponse(info);
+    if (radioResponse) radioResponse->separateConnectionResponse(info);
     return Void();
 }
 
 Return<void> SecRadioResponse::setMuteResponse(
     const ::android::hardware::radio::V1_0::RadioResponseInfo& info) {
-    radioResponse->setMuteResponse(info);
+    if (radioResponse) radioResponse->setMuteResponse(info);
     return Void();
 }
 
 Return<void> SecRadioResponse::getMuteResponse(
     const ::android::hardware::radio::V1_0::RadioResponseInfo& info, bool enable) {
-    radioResponse->getMuteResponse(info, enable);
+    if (radioResponse) radioResponse->getMuteResponse(info, enable);
     return Void();
 }
 
 Return<void> SecRadioResponse::getClipResponse(
     const ::android::hardware::radio::V1_0::RadioResponseInfo& info,
     ::android::hardware::radio::V1_0::ClipStatus status) {
-    radioResponse->getClipResponse(info, status);
+    if (radioResponse) radioResponse->getClipResponse(info, status);
     return Void();
 }
 
 Return<void> SecRadioResponse::getDataCallListResponse(
     const ::android::hardware::radio::V1_0::RadioResponseInfo& info,
     const hidl_vec<::android::hardware::radio::V1_0::SetupDataCallResult>& dcResponse) {
-    radioResponse->getDataCallListResponse(info, dcResponse);
+    if (radioResponse) radioResponse->getDataCallListResponse(info, dcResponse);
     return Void();
 }
 
 Return<void> SecRadioResponse::setSuppServiceNotificationsResponse(
     const ::android::hardware::radio::V1_0::RadioResponseInfo& info) {
-    radioResponse->setSuppServiceNotificationsResponse(info);
+    if (radioResponse) radioResponse->setSuppServiceNotificationsResponse(info);
     return Void();
 }
 
 Return<void> SecRadioResponse::writeSmsToSimResponse(
     const ::android::hardware::radio::V1_0::RadioResponseInfo& info, int32_t index) {
-    radioResponse->writeSmsToSimResponse(info, index);
+    if (radioResponse) radioResponse->writeSmsToSimResponse(info, index);
     return Void();
 }
 
 Return<void> SecRadioResponse::deleteSmsOnSimResponse(
     const ::android::hardware::radio::V1_0::RadioResponseInfo& info) {
-    radioResponse->deleteSmsOnSimResponse(info);
+    if (radioResponse) radioResponse->deleteSmsOnSimResponse(info);
     return Void();
 }
 
 Return<void> SecRadioResponse::setBandModeResponse(
     const ::android::hardware::radio::V1_0::RadioResponseInfo& info) {
-    radioResponse->setBandModeResponse(info);
+    if (radioResponse) radioResponse->setBandModeResponse(info);
     return Void();
 }
 
 Return<void> SecRadioResponse::getAvailableBandModesResponse(
     const ::android::hardware::radio::V1_0::RadioResponseInfo& info,
     const hidl_vec<::android::hardware::radio::V1_0::RadioBandMode>& bandModes) {
-    radioResponse->getAvailableBandModesResponse(info, bandModes);
+    if (radioResponse) radioResponse->getAvailableBandModesResponse(info, bandModes);
     return Void();
 }
 
 Return<void> SecRadioResponse::sendEnvelopeResponse(
     const ::android::hardware::radio::V1_0::RadioResponseInfo& info,
     const hidl_string& commandResponse) {
-    radioResponse->sendEnvelopeResponse(info, commandResponse);
+    if (radioResponse) radioResponse->sendEnvelopeResponse(info, commandResponse);
     return Void();
 }
 
 Return<void> SecRadioResponse::sendTerminalResponseToSimResponse(
     const ::android::hardware::radio::V1_0::RadioResponseInfo& info) {
-    radioResponse->sendTerminalResponseToSimResponse(info);
+    if (radioResponse) radioResponse->sendTerminalResponseToSimResponse(info);
     return Void();
 }
 
 Return<void> SecRadioResponse::handleStkCallSetupRequestFromSimResponse(
     const ::android::hardware::radio::V1_0::RadioResponseInfo& info) {
-    radioResponse->handleStkCallSetupRequestFromSimResponse(info);
+    if (radioResponse) radioResponse->handleStkCallSetupRequestFromSimResponse(info);
     return Void();
 }
 
 Return<void> SecRadioResponse::explicitCallTransferResponse(
     const ::android::hardware::radio::V1_0::RadioResponseInfo& info) {
-    radioResponse->explicitCallTransferResponse(info);
+    if (radioResponse) radioResponse->explicitCallTransferResponse(info);
     return Void();
 }
 
 Return<void> SecRadioResponse::setPreferredNetworkTypeResponse(
     const ::android::hardware::radio::V1_0::RadioResponseInfo& info) {
-    radioResponse->setPreferredNetworkTypeResponse(info);
+    if (radioResponse) radioResponse->setPreferredNetworkTypeResponse(info);
     return Void();
 }
 
 Return<void> SecRadioResponse::getPreferredNetworkTypeResponse(
     const ::android::hardware::radio::V1_0::RadioResponseInfo& info,
     ::android::hardware::radio::V1_0::PreferredNetworkType nwType) {
-    radioResponse->getPreferredNetworkTypeResponse(info, nwType);
+    if (radioResponse) radioResponse->getPreferredNetworkTypeResponse(info, nwType);
     return Void();
 }
 
 Return<void> SecRadioResponse::getNeighboringCidsResponse(
     const ::android::hardware::radio::V1_0::RadioResponseInfo& info,
     const hidl_vec<::android::hardware::radio::V1_0::NeighboringCell>& cells) {
-    radioResponse->getNeighboringCidsResponse(info, cells);
+    if (radioResponse) radioResponse->getNeighboringCidsResponse(info, cells);
     return Void();
 }
 
 Return<void> SecRadioResponse::setLocationUpdatesResponse(
     const ::android::hardware::radio::V1_0::RadioResponseInfo& info) {
-    radioResponse->setLocationUpdatesResponse(info);
+    if (radioResponse) radioResponse->setLocationUpdatesResponse(info);
     return Void();
 }
 
 Return<void> SecRadioResponse::setCdmaSubscriptionSourceResponse(
     const ::android::hardware::radio::V1_0::RadioResponseInfo& info) {
-    radioResponse->setCdmaSubscriptionSourceResponse(info);
+    if (radioResponse) radioResponse->setCdmaSubscriptionSourceResponse(info);
     return Void();
 }
 
 Return<void> SecRadioResponse::setCdmaRoamingPreferenceResponse(
     const ::android::hardware::radio::V1_0::RadioResponseInfo& info) {
-    radioResponse->setCdmaRoamingPreferenceResponse(info);
+    if (radioResponse) radioResponse->setCdmaRoamingPreferenceResponse(info);
     return Void();
 }
 
 Return<void> SecRadioResponse::getCdmaRoamingPreferenceResponse(
     const ::android::hardware::radio::V1_0::RadioResponseInfo& info,
     ::android::hardware::radio::V1_0::CdmaRoamingType type) {
-    radioResponse->getCdmaRoamingPreferenceResponse(info, type);
+    if (radioResponse) radioResponse->getCdmaRoamingPreferenceResponse(info, type);
     return Void();
 }
 
 Return<void> SecRadioResponse::setTTYModeResponse(
     const ::android::hardware::radio::V1_0::RadioResponseInfo& info) {
-    radioResponse->setTTYModeResponse(info);
+    if (radioResponse) radioResponse->setTTYModeResponse(info);
     return Void();
 }
 
 Return<void> SecRadioResponse::getTTYModeResponse(
     const ::android::hardware::radio::V1_0::RadioResponseInfo& info,
     ::android::hardware::radio::V1_0::TtyMode mode) {
-    radioResponse->getTTYModeResponse(info, mode);
+    if (radioResponse) radioResponse->getTTYModeResponse(info, mode);
     return Void();
 }
 
 Return<void> SecRadioResponse::setPreferredVoicePrivacyResponse(
     const ::android::hardware::radio::V1_0::RadioResponseInfo& info) {
-    radioResponse->setPreferredVoicePrivacyResponse(info);
+    if (radioResponse) radioResponse->setPreferredVoicePrivacyResponse(info);
     return Void();
 }
 
 Return<void> SecRadioResponse::getPreferredVoicePrivacyResponse(
     const ::android::hardware::radio::V1_0::RadioResponseInfo& info, bool enable) {
-    radioResponse->getPreferredVoicePrivacyResponse(info, enable);
+    if (radioResponse) radioResponse->getPreferredVoicePrivacyResponse(info, enable);
     return Void();
 }
 
 Return<void> SecRadioResponse::sendCDMAFeatureCodeResponse(
     const ::android::hardware::radio::V1_0::RadioResponseInfo& info) {
-    radioResponse->sendCDMAFeatureCodeResponse(info);
+    if (radioResponse) radioResponse->sendCDMAFeatureCodeResponse(info);
     return Void();
 }
 
 Return<void> SecRadioResponse::sendBurstDtmfResponse(
     const ::android::hardware::radio::V1_0::RadioResponseInfo& info) {
-    radioResponse->sendBurstDtmfResponse(info);
+    if (radioResponse) radioResponse->sendBurstDtmfResponse(info);
     return Void();
 }
 
 Return<void> SecRadioResponse::sendCdmaSmsResponse(
     const ::android::hardware::radio::V1_0::RadioResponseInfo& info,
     const ::android::hardware::radio::V1_0::SendSmsResult& sms) {
-    radioResponse->sendCdmaSmsResponse(info, sms);
+    if (radioResponse) radioResponse->sendCdmaSmsResponse(info, sms);
     return Void();
 }
 
 Return<void> SecRadioResponse::acknowledgeLastIncomingCdmaSmsResponse(
     const ::android::hardware::radio::V1_0::RadioResponseInfo& info) {
-    radioResponse->acknowledgeLastIncomingCdmaSmsResponse(info);
+    if (radioResponse) radioResponse->acknowledgeLastIncomingCdmaSmsResponse(info);
     return Void();
 }
 
 Return<void> SecRadioResponse::getGsmBroadcastConfigResponse(
     const ::android::hardware::radio::V1_0::RadioResponseInfo& info,
     const hidl_vec<::android::hardware::radio::V1_0::GsmBroadcastSmsConfigInfo>& configs) {
-    radioResponse->getGsmBroadcastConfigResponse(info, configs);
+    if (radioResponse) radioResponse->getGsmBroadcastConfigResponse(info, configs);
     return Void();
 }
 
 Return<void> SecRadioResponse::setGsmBroadcastConfigResponse(
     const ::android::hardware::radio::V1_0::RadioResponseInfo& info) {
-    radioResponse->setGsmBroadcastConfigResponse(info);
+    if (radioResponse) radioResponse->setGsmBroadcastConfigResponse(info);
     return Void();
 }
 
 Return<void> SecRadioResponse::setGsmBroadcastActivationResponse(
     const ::android::hardware::radio::V1_0::RadioResponseInfo& info) {
-    radioResponse->setGsmBroadcastActivationResponse(info);
+    if (radioResponse) radioResponse->setGsmBroadcastActivationResponse(info);
     return Void();
 }
 
 Return<void> SecRadioResponse::getCdmaBroadcastConfigResponse(
     const ::android::hardware::radio::V1_0::RadioResponseInfo& info,
     const hidl_vec<::android::hardware::radio::V1_0::CdmaBroadcastSmsConfigInfo>& configs) {
-    radioResponse->getCdmaBroadcastConfigResponse(info, configs);
+    if (radioResponse) radioResponse->getCdmaBroadcastConfigResponse(info, configs);
     return Void();
 }
 
 Return<void> SecRadioResponse::setCdmaBroadcastConfigResponse(
     const ::android::hardware::radio::V1_0::RadioResponseInfo& info) {
-    radioResponse->setCdmaBroadcastConfigResponse(info);
+    if (radioResponse) radioResponse->setCdmaBroadcastConfigResponse(info);
     return Void();
 }
 
 Return<void> SecRadioResponse::setCdmaBroadcastActivationResponse(
     const ::android::hardware::radio::V1_0::RadioResponseInfo& info) {
-    radioResponse->setCdmaBroadcastActivationResponse(info);
+    if (radioResponse) radioResponse->setCdmaBroadcastActivationResponse(info);
     return Void();
 }
 
@@ -561,327 +561,327 @@ Return<void> SecRadioResponse::getCDMASubscriptionResponse(
     const ::android::hardware::radio::V1_0::RadioResponseInfo& info, const hidl_string& mdn,
     const hidl_string& hSid, const hidl_string& hNid, const hidl_string& min,
     const hidl_string& prl) {
-    radioResponse->getCDMASubscriptionResponse(info, mdn, hSid, hNid, min, prl);
+    if (radioResponse) radioResponse->getCDMASubscriptionResponse(info, mdn, hSid, hNid, min, prl);
     return Void();
 }
 
 Return<void> SecRadioResponse::writeSmsToRuimResponse(
     const ::android::hardware::radio::V1_0::RadioResponseInfo& info, uint32_t index) {
-    radioResponse->writeSmsToRuimResponse(info, index);
+    if (radioResponse) radioResponse->writeSmsToRuimResponse(info, index);
     return Void();
 }
 
 Return<void> SecRadioResponse::deleteSmsOnRuimResponse(
     const ::android::hardware::radio::V1_0::RadioResponseInfo& info) {
-    radioResponse->deleteSmsOnRuimResponse(info);
+    if (radioResponse) radioResponse->deleteSmsOnRuimResponse(info);
     return Void();
 }
 
 Return<void> SecRadioResponse::getDeviceIdentityResponse(
     const ::android::hardware::radio::V1_0::RadioResponseInfo& info, const hidl_string& imei,
     const hidl_string& imeisv, const hidl_string& esn, const hidl_string& meid) {
-    radioResponse->getDeviceIdentityResponse(info, imei, imeisv, esn, meid);
+    if (radioResponse) radioResponse->getDeviceIdentityResponse(info, imei, imeisv, esn, meid);
     return Void();
 }
 
 Return<void> SecRadioResponse::exitEmergencyCallbackModeResponse(
     const ::android::hardware::radio::V1_0::RadioResponseInfo& info) {
-    radioResponse->exitEmergencyCallbackModeResponse(info);
+    if (radioResponse) radioResponse->exitEmergencyCallbackModeResponse(info);
     return Void();
 }
 
 Return<void> SecRadioResponse::getSmscAddressResponse(
     const ::android::hardware::radio::V1_0::RadioResponseInfo& info, const hidl_string& smsc) {
-    radioResponse->getSmscAddressResponse(info, smsc);
+    if (radioResponse) radioResponse->getSmscAddressResponse(info, smsc);
     return Void();
 }
 
 Return<void> SecRadioResponse::setSmscAddressResponse(
     const ::android::hardware::radio::V1_0::RadioResponseInfo& info) {
-    radioResponse->setSmscAddressResponse(info);
+    if (radioResponse) radioResponse->setSmscAddressResponse(info);
     return Void();
 }
 
 Return<void> SecRadioResponse::reportSmsMemoryStatusResponse(
     const ::android::hardware::radio::V1_0::RadioResponseInfo& info) {
-    radioResponse->reportSmsMemoryStatusResponse(info);
+    if (radioResponse) radioResponse->reportSmsMemoryStatusResponse(info);
     return Void();
 }
 
 Return<void> SecRadioResponse::reportStkServiceIsRunningResponse(
     const ::android::hardware::radio::V1_0::RadioResponseInfo& info) {
-    radioResponse->reportStkServiceIsRunningResponse(info);
+    if (radioResponse) radioResponse->reportStkServiceIsRunningResponse(info);
     return Void();
 }
 
 Return<void> SecRadioResponse::getCdmaSubscriptionSourceResponse(
     const ::android::hardware::radio::V1_0::RadioResponseInfo& info,
     ::android::hardware::radio::V1_0::CdmaSubscriptionSource source) {
-    radioResponse->getCdmaSubscriptionSourceResponse(info, source);
+    if (radioResponse) radioResponse->getCdmaSubscriptionSourceResponse(info, source);
     return Void();
 }
 
 Return<void> SecRadioResponse::requestIsimAuthenticationResponse(
     const ::android::hardware::radio::V1_0::RadioResponseInfo& info, const hidl_string& response) {
-    radioResponse->requestIsimAuthenticationResponse(info, response);
+    if (radioResponse) radioResponse->requestIsimAuthenticationResponse(info, response);
     return Void();
 }
 
 Return<void> SecRadioResponse::acknowledgeIncomingGsmSmsWithPduResponse(
     const ::android::hardware::radio::V1_0::RadioResponseInfo& info) {
-    radioResponse->acknowledgeIncomingGsmSmsWithPduResponse(info);
+    if (radioResponse) radioResponse->acknowledgeIncomingGsmSmsWithPduResponse(info);
     return Void();
 }
 
 Return<void> SecRadioResponse::sendEnvelopeWithStatusResponse(
     const ::android::hardware::radio::V1_0::RadioResponseInfo& info,
     const ::android::hardware::radio::V1_0::IccIoResult& iccIo) {
-    radioResponse->sendEnvelopeWithStatusResponse(info, iccIo);
+    if (radioResponse) radioResponse->sendEnvelopeWithStatusResponse(info, iccIo);
     return Void();
 }
 
 Return<void> SecRadioResponse::getVoiceRadioTechnologyResponse(
     const ::android::hardware::radio::V1_0::RadioResponseInfo& info,
     ::android::hardware::radio::V1_0::RadioTechnology rat) {
-    radioResponse->getVoiceRadioTechnologyResponse(info, rat);
+    if (radioResponse) radioResponse->getVoiceRadioTechnologyResponse(info, rat);
     return Void();
 }
 
 Return<void> SecRadioResponse::getCellInfoListResponse(
     const ::android::hardware::radio::V1_0::RadioResponseInfo& info,
     const hidl_vec<::android::hardware::radio::V1_0::CellInfo>& cellInfo) {
-    radioResponse->getCellInfoListResponse(info, cellInfo);
+    if (radioResponse) radioResponse->getCellInfoListResponse(info, cellInfo);
     return Void();
 }
 
 Return<void> SecRadioResponse::setCellInfoListRateResponse(
     const ::android::hardware::radio::V1_0::RadioResponseInfo& info) {
-    radioResponse->setCellInfoListRateResponse(info);
+    if (radioResponse) radioResponse->setCellInfoListRateResponse(info);
     return Void();
 }
 
 Return<void> SecRadioResponse::setInitialAttachApnResponse(
     const ::android::hardware::radio::V1_0::RadioResponseInfo& info) {
-    radioResponse->setInitialAttachApnResponse(info);
+    if (radioResponse) radioResponse->setInitialAttachApnResponse(info);
     return Void();
 }
 
 Return<void> SecRadioResponse::getImsRegistrationStateResponse(
     const ::android::hardware::radio::V1_0::RadioResponseInfo& info, bool isRegistered,
     ::android::hardware::radio::V1_0::RadioTechnologyFamily ratFamily) {
-    radioResponse->getImsRegistrationStateResponse(info, isRegistered, ratFamily);
+    if (radioResponse) radioResponse->getImsRegistrationStateResponse(info, isRegistered, ratFamily);
     return Void();
 }
 
 Return<void> SecRadioResponse::sendImsSmsResponse(
     const ::android::hardware::radio::V1_0::RadioResponseInfo& info,
     const ::android::hardware::radio::V1_0::SendSmsResult& sms) {
-    radioResponse->sendImsSmsResponse(info, sms);
+    if (radioResponse) radioResponse->sendImsSmsResponse(info, sms);
     return Void();
 }
 
 Return<void> SecRadioResponse::iccTransmitApduBasicChannelResponse(
     const ::android::hardware::radio::V1_0::RadioResponseInfo& info,
     const ::android::hardware::radio::V1_0::IccIoResult& result) {
-    radioResponse->iccTransmitApduBasicChannelResponse(info, result);
+    if (radioResponse) radioResponse->iccTransmitApduBasicChannelResponse(info, result);
     return Void();
 }
 
 Return<void> SecRadioResponse::iccOpenLogicalChannelResponse(
     const ::android::hardware::radio::V1_0::RadioResponseInfo& info, int32_t channelId,
     const hidl_vec<int8_t>& selectResponse) {
-    radioResponse->iccOpenLogicalChannelResponse(info, channelId, selectResponse);
+    if (radioResponse) radioResponse->iccOpenLogicalChannelResponse(info, channelId, selectResponse);
     return Void();
 }
 
 Return<void> SecRadioResponse::iccCloseLogicalChannelResponse(
     const ::android::hardware::radio::V1_0::RadioResponseInfo& info) {
-    radioResponse->iccCloseLogicalChannelResponse(info);
+    if (radioResponse) radioResponse->iccCloseLogicalChannelResponse(info);
     return Void();
 }
 
 Return<void> SecRadioResponse::iccTransmitApduLogicalChannelResponse(
     const ::android::hardware::radio::V1_0::RadioResponseInfo& info,
     const ::android::hardware::radio::V1_0::IccIoResult& result) {
-    radioResponse->iccTransmitApduLogicalChannelResponse(info, result);
+    if (radioResponse) radioResponse->iccTransmitApduLogicalChannelResponse(info, result);
     return Void();
 }
 
 Return<void> SecRadioResponse::nvReadItemResponse(
     const ::android::hardware::radio::V1_0::RadioResponseInfo& info, const hidl_string& result) {
-    radioResponse->nvReadItemResponse(info, result);
+    if (radioResponse) radioResponse->nvReadItemResponse(info, result);
     return Void();
 }
 
 Return<void> SecRadioResponse::nvWriteItemResponse(
     const ::android::hardware::radio::V1_0::RadioResponseInfo& info) {
-    radioResponse->nvWriteItemResponse(info);
+    if (radioResponse) radioResponse->nvWriteItemResponse(info);
     return Void();
 }
 
 Return<void> SecRadioResponse::nvWriteCdmaPrlResponse(
     const ::android::hardware::radio::V1_0::RadioResponseInfo& info) {
-    radioResponse->nvWriteCdmaPrlResponse(info);
+    if (radioResponse) radioResponse->nvWriteCdmaPrlResponse(info);
     return Void();
 }
 
 Return<void> SecRadioResponse::nvResetConfigResponse(
     const ::android::hardware::radio::V1_0::RadioResponseInfo& info) {
-    radioResponse->nvResetConfigResponse(info);
+    if (radioResponse) radioResponse->nvResetConfigResponse(info);
     return Void();
 }
 
 Return<void> SecRadioResponse::setUiccSubscriptionResponse(
     const ::android::hardware::radio::V1_0::RadioResponseInfo& info) {
-    radioResponse->setUiccSubscriptionResponse(info);
+    if (radioResponse) radioResponse->setUiccSubscriptionResponse(info);
     return Void();
 }
 
 Return<void> SecRadioResponse::setDataAllowedResponse(
     const ::android::hardware::radio::V1_0::RadioResponseInfo& info) {
-    radioResponse->setDataAllowedResponse(info);
+    if (radioResponse) radioResponse->setDataAllowedResponse(info);
     return Void();
 }
 
 Return<void> SecRadioResponse::getHardwareConfigResponse(
     const ::android::hardware::radio::V1_0::RadioResponseInfo& info,
     const hidl_vec<::android::hardware::radio::V1_0::HardwareConfig>& config) {
-    radioResponse->getHardwareConfigResponse(info, config);
+    if (radioResponse) radioResponse->getHardwareConfigResponse(info, config);
     return Void();
 }
 
 Return<void> SecRadioResponse::requestIccSimAuthenticationResponse(
     const ::android::hardware::radio::V1_0::RadioResponseInfo& info,
     const ::android::hardware::radio::V1_0::IccIoResult& result) {
-    radioResponse->requestIccSimAuthenticationResponse(info, result);
+    if (radioResponse) radioResponse->requestIccSimAuthenticationResponse(info, result);
     return Void();
 }
 
 Return<void> SecRadioResponse::setDataProfileResponse(
     const ::android::hardware::radio::V1_0::RadioResponseInfo& info) {
-    radioResponse->setDataProfileResponse(info);
+    if (radioResponse) radioResponse->setDataProfileResponse(info);
     return Void();
 }
 
 Return<void> SecRadioResponse::requestShutdownResponse(
     const ::android::hardware::radio::V1_0::RadioResponseInfo& info) {
-    radioResponse->requestShutdownResponse(info);
+    if (radioResponse) radioResponse->requestShutdownResponse(info);
     return Void();
 }
 
 Return<void> SecRadioResponse::getRadioCapabilityResponse(
     const ::android::hardware::radio::V1_0::RadioResponseInfo& info,
     const ::android::hardware::radio::V1_0::RadioCapability& rc) {
-    radioResponse->getRadioCapabilityResponse(info, rc);
+    if (radioResponse) radioResponse->getRadioCapabilityResponse(info, rc);
     return Void();
 }
 
 Return<void> SecRadioResponse::setRadioCapabilityResponse(
     const ::android::hardware::radio::V1_0::RadioResponseInfo& info,
     const ::android::hardware::radio::V1_0::RadioCapability& rc) {
-    radioResponse->setRadioCapabilityResponse(info, rc);
+    if (radioResponse) radioResponse->setRadioCapabilityResponse(info, rc);
     return Void();
 }
 
 Return<void> SecRadioResponse::startLceServiceResponse(
     const ::android::hardware::radio::V1_0::RadioResponseInfo& info,
     const ::android::hardware::radio::V1_0::LceStatusInfo& statusInfo) {
-    radioResponse->startLceServiceResponse(info, statusInfo);
+    if (radioResponse) radioResponse->startLceServiceResponse(info, statusInfo);
     return Void();
 }
 
 Return<void> SecRadioResponse::stopLceServiceResponse(
     const ::android::hardware::radio::V1_0::RadioResponseInfo& info,
     const ::android::hardware::radio::V1_0::LceStatusInfo& statusInfo) {
-    radioResponse->stopLceServiceResponse(info, statusInfo);
+    if (radioResponse) radioResponse->stopLceServiceResponse(info, statusInfo);
     return Void();
 }
 
 Return<void> SecRadioResponse::pullLceDataResponse(
     const ::android::hardware::radio::V1_0::RadioResponseInfo& info,
     const ::android::hardware::radio::V1_0::LceDataInfo& lceInfo) {
-    radioResponse->pullLceDataResponse(info, lceInfo);
+    if (radioResponse) radioResponse->pullLceDataResponse(info, lceInfo);
     return Void();
 }
 
 Return<void> SecRadioResponse::getModemActivityInfoResponse(
     const ::android::hardware::radio::V1_0::RadioResponseInfo& info,
     const ::android::hardware::radio::V1_0::ActivityStatsInfo& activityInfo) {
-    radioResponse->getModemActivityInfoResponse(info, activityInfo);
+    if (radioResponse) radioResponse->getModemActivityInfoResponse(info, activityInfo);
     return Void();
 }
 
 Return<void> SecRadioResponse::setAllowedCarriersResponse(
     const ::android::hardware::radio::V1_0::RadioResponseInfo& info, int32_t numAllowed) {
-    radioResponse->setAllowedCarriersResponse(info, numAllowed);
+    if (radioResponse) radioResponse->setAllowedCarriersResponse(info, numAllowed);
     return Void();
 }
 
 Return<void> SecRadioResponse::getAllowedCarriersResponse(
     const ::android::hardware::radio::V1_0::RadioResponseInfo& info, bool allAllowed,
     const ::android::hardware::radio::V1_0::CarrierRestrictions& carriers) {
-    radioResponse->getAllowedCarriersResponse(info, allAllowed, carriers);
+    if (radioResponse) radioResponse->getAllowedCarriersResponse(info, allAllowed, carriers);
     return Void();
 }
 
 Return<void> SecRadioResponse::sendDeviceStateResponse(
     const ::android::hardware::radio::V1_0::RadioResponseInfo& info) {
-    radioResponse->sendDeviceStateResponse(info);
+    if (radioResponse) radioResponse->sendDeviceStateResponse(info);
     return Void();
 }
 
 Return<void> SecRadioResponse::setIndicationFilterResponse(
     const ::android::hardware::radio::V1_0::RadioResponseInfo& info) {
-    radioResponse->setIndicationFilterResponse(info);
+    if (radioResponse) radioResponse->setIndicationFilterResponse(info);
     return Void();
 }
 
 Return<void> SecRadioResponse::setSimCardPowerResponse(
     const ::android::hardware::radio::V1_0::RadioResponseInfo& info) {
-    radioResponse->setSimCardPowerResponse(info);
+    if (radioResponse) radioResponse->setSimCardPowerResponse(info);
     return Void();
 }
 
 Return<void> SecRadioResponse::acknowledgeRequest(int32_t serial) {
-    radioResponse->acknowledgeRequest(serial);
+    if (radioResponse) radioResponse->acknowledgeRequest(serial);
     return Void();
 }
 
 // Methods from ::android::hardware::radio::V1_1::IRadioResponse follow.
 Return<void> SecRadioResponse::setCarrierInfoForImsiEncryptionResponse(
     const ::android::hardware::radio::V1_0::RadioResponseInfo& info) {
-    radioResponse->setCarrierInfoForImsiEncryptionResponse(info);
+    if (radioResponse) radioResponse->setCarrierInfoForImsiEncryptionResponse(info);
     return Void();
 }
 
 Return<void> SecRadioResponse::setSimCardPowerResponse_1_1(
     const ::android::hardware::radio::V1_0::RadioResponseInfo& info) {
-    radioResponse->setSimCardPowerResponse_1_1(info);
+    if (radioResponse) radioResponse->setSimCardPowerResponse_1_1(info);
     return Void();
 }
 
 Return<void> SecRadioResponse::startNetworkScanResponse(
     const ::android::hardware::radio::V1_0::RadioResponseInfo& info) {
-    radioResponse->startNetworkScanResponse(info);
+    if (radioResponse) radioResponse->startNetworkScanResponse(info);
     return Void();
 }
 
 Return<void> SecRadioResponse::stopNetworkScanResponse(
     const ::android::hardware::radio::V1_0::RadioResponseInfo& info) {
-    radioResponse->stopNetworkScanResponse(info);
+    if (radioResponse) radioResponse->stopNetworkScanResponse(info);
     return Void();
 }
 
 Return<void> SecRadioResponse::startKeepaliveResponse(
     const ::android::hardware::radio::V1_0::RadioResponseInfo& info,
     const ::android::hardware::radio::V1_1::KeepaliveStatus& status) {
-    radioResponse->startKeepaliveResponse(info, status);
+    if (radioResponse) radioResponse->startKeepaliveResponse(info, status);
     return Void();
 }
 
 Return<void> SecRadioResponse::stopKeepaliveResponse(
     const ::android::hardware::radio::V1_0::RadioResponseInfo& info) {
-    radioResponse->stopKeepaliveResponse(info);
+    if (radioResponse) radioResponse->stopKeepaliveResponse(info);
     return Void();
 }
 
@@ -889,54 +889,54 @@ Return<void> SecRadioResponse::stopKeepaliveResponse(
 Return<void> SecRadioResponse::getCellInfoListResponse_1_2(
     const ::android::hardware::radio::V1_0::RadioResponseInfo& info,
     const hidl_vec<::android::hardware::radio::V1_2::CellInfo>& cellInfo) {
-    radioResponse->getCellInfoListResponse_1_2(info, cellInfo);
+    if (radioResponse) radioResponse->getCellInfoListResponse_1_2(info, cellInfo);
     return Void();
 }
 
 Return<void> SecRadioResponse::getIccCardStatusResponse_1_2(
     const ::android::hardware::radio::V1_0::RadioResponseInfo& info,
     const ::android::hardware::radio::V1_2::CardStatus& cardStatus) {
-    radioResponse->getIccCardStatusResponse_1_2(info, cardStatus);
+    if (radioResponse) radioResponse->getIccCardStatusResponse_1_2(info, cardStatus);
     return Void();
 }
 
 Return<void> SecRadioResponse::setSignalStrengthReportingCriteriaResponse(
     const ::android::hardware::radio::V1_0::RadioResponseInfo& info) {
-    radioResponse->setSignalStrengthReportingCriteriaResponse(info);
+    if (radioResponse) radioResponse->setSignalStrengthReportingCriteriaResponse(info);
     return Void();
 }
 
 Return<void> SecRadioResponse::setLinkCapacityReportingCriteriaResponse(
     const ::android::hardware::radio::V1_0::RadioResponseInfo& info) {
-    radioResponse->setLinkCapacityReportingCriteriaResponse(info);
+    if (radioResponse) radioResponse->setLinkCapacityReportingCriteriaResponse(info);
     return Void();
 }
 
 Return<void> SecRadioResponse::getCurrentCallsResponse_1_2(
     const ::android::hardware::radio::V1_0::RadioResponseInfo& info,
     const hidl_vec<::android::hardware::radio::V1_2::Call>& calls) {
-    radioResponse->getCurrentCallsResponse_1_2(info, calls);
+    if (radioResponse) radioResponse->getCurrentCallsResponse_1_2(info, calls);
     return Void();
 }
 
 Return<void> SecRadioResponse::getSignalStrengthResponse_1_2(
     const ::android::hardware::radio::V1_0::RadioResponseInfo& info,
     const ::android::hardware::radio::V1_2::SignalStrength& signalStrength) {
-    radioResponse->getSignalStrengthResponse_1_2(info, signalStrength);
+    if (radioResponse) radioResponse->getSignalStrengthResponse_1_2(info, signalStrength);
     return Void();
 }
 
 Return<void> SecRadioResponse::getVoiceRegistrationStateResponse_1_2(
     const ::android::hardware::radio::V1_0::RadioResponseInfo& info,
     const ::android::hardware::radio::V1_2::VoiceRegStateResult& voiceRegResponse) {
-    radioResponse->getVoiceRegistrationStateResponse_1_2(info, voiceRegResponse);
+    if (radioResponse) radioResponse->getVoiceRegistrationStateResponse_1_2(info, voiceRegResponse);
     return Void();
 }
 
 Return<void> SecRadioResponse::getDataRegistrationStateResponse_1_2(
     const ::android::hardware::radio::V1_0::RadioResponseInfo& info,
     const ::android::hardware::radio::V1_2::DataRegStateResult& dataRegResponse) {
-    radioResponse->getDataRegistrationStateResponse_1_2(info, dataRegResponse);
+    if (radioResponse) radioResponse->getDataRegistrationStateResponse_1_2(info, dataRegResponse);
     return Void();
 }
 
