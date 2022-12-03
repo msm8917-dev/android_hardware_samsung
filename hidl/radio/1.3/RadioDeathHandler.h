@@ -25,7 +25,7 @@ template <class I> struct SehRadioDeathRecipient : hidl_death_recipient {
       if (ref) {
         ALOGI("Name: %s, removing local instance of it.", ref->name.c_str());
         if (ref->instanceRef) {
-          *(ref->instanceRef) = nullptr;
+          ref->instanceRef->clear();
         } else {
           ALOGW("Cookie contains null sp. Won't touch it.");
         }
