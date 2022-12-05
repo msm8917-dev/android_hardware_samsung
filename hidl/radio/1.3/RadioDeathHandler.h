@@ -19,15 +19,15 @@ template <class I> struct RadioHandle {
 template <class I> struct SehRadioDeathRecipient : hidl_death_recipient {
   void serviceDied(uint64_t cookie,
                    const android::wp<IBase> & /* who */) override {
-    ALOGW("A binder has died");
+    ALOGW("A radio binder has died");
     if (cookie > 0) {
       auto ref = reinterpret_cast<RadioHandle<I> *>(cookie);
       if (ref) {
-        ALOGI("Name: %s, removing local instance of it.", ref->name.c_str());
+        ALOGI("Name: '%s', invalidating local reference to it.", ref->name.c_str());
         if (ref->instanceRef) {
           ref->instanceRef->clear();
         } else {
-          ALOGW("Cookie contains null sp. Won't touch it.");
+          ALOGW("Cookie contains null pointer to the binder");
         }
         delete ref; // We no longer need it, instance ref is dead binder
       } else {
@@ -35,8 +35,7 @@ template <class I> struct SehRadioDeathRecipient : hidl_death_recipient {
       }
     } else {
       // This is an unsigned 64bit int. Effectively cookie == 0
-      ALOGE("Cookie is NULL, cannot obtain reference to binder instance");
-      ALOGE("This HAL may be killed soon");
+      ALOGE("Cookie is NULL, cannot obtain reference to binder");
     }
   }
 };
