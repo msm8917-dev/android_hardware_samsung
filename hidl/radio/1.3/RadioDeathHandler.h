@@ -1,5 +1,11 @@
 #pragma once
 
+#ifdef LOG_TAG
+#undef LOG_TAG
+#endif
+#define LOG_TAG "SehRadioDeathReceiver"
+#include <log/log.h>
+
 #include <hidl/HidlSupport.h>
 
 namespace android {
@@ -10,15 +16,16 @@ namespace implementation {
 
 using ::android::hidl::base::V1_0::IBase;
 
-template <class I> struct RadioHandle {
+template <class I>
+struct RadioHandle {
   sp<I> *instanceRef;
   std::string name;
 };
 
 // Handles the case where any of radio binder dies.
-template <class I> struct SehRadioDeathRecipient : hidl_death_recipient {
-  void serviceDied(uint64_t cookie,
-                   const android::wp<IBase> & /* who */) override {
+template <class I>
+struct SehRadioDeathRecipient : hidl_death_recipient {
+  void serviceDied(uint64_t cookie, const android::wp<IBase> & /* who */) override {
     ALOGW("A radio binder has died");
     if (cookie > 0) {
       auto ref = reinterpret_cast<RadioHandle<I> *>(cookie);

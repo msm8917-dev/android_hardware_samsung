@@ -14,12 +14,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-#define LOG_TAG "android.hardware.radio@1.3-radio-service.samsung"
 
 #include <android/hardware/radio/1.3/IRadio.h>
 #include <hidl/HidlTransportSupport.h>
-
 #include "Radio.h"
+
+#ifdef LOG_TAG
+#undef LOG_TAG
+#endif
+#define LOG_TAG "android.hardware.radio@1.3-radio-service.samsung"
 
 using android::OK;
 using android::sp;

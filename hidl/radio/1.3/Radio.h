@@ -17,7 +17,6 @@
 #pragma once
 
 #include <android/hardware/radio/1.3/IRadio.h>
-#include <log/log.h>
 #include <hidl/MQDescriptor.h>
 #include <hidl/Status.h>
 #include <vendor/samsung/hardware/radio/1.2/IRadio.h>

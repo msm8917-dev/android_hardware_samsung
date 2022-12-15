@@ -16,6 +16,12 @@
 
 #include "Radio.h"
 
+#ifdef LOG_TAG
+#undef LOG_TAG
+#endif
+#define LOG_TAG "radio@1.3-service"
+#include <log/log.h>
+
 #define RADIOE_IF(handle, res) ALOGE_IF(!static_cast<bool>(res), "%s: Failed to setup death recipient.", handle->name.c_str())
 
 namespace android {
